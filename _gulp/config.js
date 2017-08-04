@@ -36,7 +36,10 @@ module.exports = {
           path + 'js/loader.js'
 
         ],
+        vendors : [ // source vendors frontend
+        ],
         concatFilename: 'theme.concat.js', // result filename
+        concatVendorFilename: 'vendor.concat.js', // result filename vendor scripts
         jekyllJsDest: path + '_site/js/',
         jsDest: path + 'js/'
     },

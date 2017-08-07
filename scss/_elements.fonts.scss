@@ -1,0 +1,23 @@
+/*
+    Elements: Fonts
+    ---
+    @font-face declarations
+*/
+
+@font-face {
+    font-family: 'Calibre';
+    src: url('../fonts/CalibreWeb-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/CalibreWeb-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/CalibreWeb-Regular.ttf')  format('truetype'); /* Safari, Android, iOS */
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Calibre';
+    src: url('../fonts/CalibreWeb-Bold.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/CalibreWeb-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../fonts/CalibreWeb-Bold.ttf')  format('truetype'); /* Safari, Android, iOS */
+    font-weight: 700;
+    font-style: normal;
+}

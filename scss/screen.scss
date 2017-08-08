@@ -27,8 +27,10 @@
 // Tools
 @import '../vendor/chopstick-sass/scss/tools.functions';
 @import '../vendor/chopstick-sass/scss/tools.mixins';
-@import '../vendor/chopstick-sass/scss/tools.spacing';
-@import '../vendor/chopstick-sass/scss/tools.typography';
+//@import '../vendor/chopstick-sass/scss/tools.spacing';
+@import 'tools.spacing';
+//@import '../vendor/chopstick-sass/scss/tools.typography';
+@import 'tools.typography';
 
 /* Generic */
 @import '../vendor/chopstick-sass/scss/generic.normalize';

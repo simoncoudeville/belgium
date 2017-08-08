@@ -3,3 +3,36 @@
     ---
     Hacks and quick fixes
 */
+
+$show-baseline: true;
+
+html {
+    position: relative;
+
+    @if $show-baseline {
+        &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            z-index: 100;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            pointer-events: none;
+            background-image: linear-gradient(#ccc 0, transparent 1px), linear-gradient(#ccc 0, transparent 1px), linear-gradient(#ccc 0, transparent 1px), linear-gradient(#ccc 0, transparent 1px);
+            background-size: 100% #{$alpha-line-height}px, 100% #{$alpha-line-height}px, 100% #{$alpha-line-height}px, 100% #{$alpha-line-height}px;
+            background-position: 0 #{$alpha-line-height * .25}px, 0 #{$alpha-line-height/2}px, 0 #{$alpha-line-height * .75}px, 0 #{$alpha-line-height}px;
+        }
+    }
+}
+
+h1,
+h2,
+h3,
+p,
+li {
+    @if $show-baseline {
+        background-color: rgba(red,.1);
+    }
+}

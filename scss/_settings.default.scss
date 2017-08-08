@@ -102,17 +102,17 @@ $ms-2                               : 12 !default;
 $ms-1                               : 14 !default;
 $ms0                                : 16 !default;
 $ms1                                : 18 !default;
-$ms2                                : 21 !default;
-$ms3                                : 23 !default;
+$ms2                                : 20 !default;
+$ms3                                : 24 !default;
 $ms4                                : 28 !default;
-$ms5                                : 31 !default;
-$ms6                                : 37 !default;
+$ms5                                : 32 !default;
+$ms6                                : 36 !default;
 $ms7                                : 42 !default;
 $ms8                                : 50 !default;
 $ms9                                : 56 !default;
-$ms10                               : 67 !default;
-$ms11                               : 75 !default;
-$ms12                               : 89 !default;
+$ms10                               : 68 !default;
+$ms11                               : 74 !default;
+$ms12                               : 90 !default;
 $ms13                               : 100 !default;
 
 // ---
@@ -122,21 +122,21 @@ $ms13                               : 100 !default;
 $alpha-font-family                  : 'Calibre', sans-serif !default;
 $beta-font-family                   : serif !default;
 
-$alpha-font-size                    : $ms0 !default;
+$alpha-font-size                    : $ms2 !default;
 
 $alpha-font-weight                  : 400 !default;
 $beta-font-weight                   : 700 !default;
 
-$alpha-line-height                  : 1.5 !default;
+$alpha-line-height                  : 28 !default;
 
-$alpha-leading                      : 1 !default;
-$beta-leading                       : 2 !default;
+$alpha-leading                      : $alpha-line-height * 1 !default;
+$beta-leading                       : $alpha-line-height * 2 !default;
 
 // ---
 // UI
 // ---
 
-$radius                             : 5px !default;
+$radius                             : 0 !default;
 $border-width                       : 1px !default;
 $border-style                       : solid !default;
 
@@ -170,7 +170,7 @@ $breakpoints: (
 // ---
 
 // 1 times the $alpha-font-size. It's calculated in rem in _tools.spacing.scss
-$columns-gutter                     : 1 !default;
+$columns-gutter                     : $alpha-leading / 2 !default;
 
 // Define the amount of columns in the grid
 $columns: (
@@ -230,27 +230,27 @@ $body-selection-text-shadow         : none !default;
 // ---
 
 $h1-font-family                     : $alpha-font-family !default;
-$h1-font-weight                     : $alpha-font-weight !default;
-$h1-font-size                       : $ms6 !default;
-$h1-line-height                     : 2 !default;
+$h1-font-weight                     : $beta-font-weight !default;
+$h1-font-size                       : $ms5 !default;
+$h1-line-height                     : 1.25 !default;
 $h1-margin-bottom                   : $alpha-leading !default;
 
 $h2-font-family                     : $alpha-font-family !default;
-$h2-font-weight                     : $alpha-font-weight !default;
-$h2-font-size                       : $ms4 !default;
-$h2-line-height                     : 1.5 !default;
+$h2-font-weight                     : $beta-font-weight !default;
+$h2-font-size                       : $ms3 !default;
+$h2-line-height                     : 1 !default;
 $h2-margin-bottom                   : $alpha-leading !default;
 
 $h3-font-family                     : $alpha-font-family !default;
-$h3-font-weight                     : $alpha-font-weight !default;
-$h3-font-size                       : $ms3 !default;
-$h3-line-height                     : 1.25 !default;
+$h3-font-weight                     : $beta-font-weight !default;
+$h3-font-size                       : $ms2 !default;
+$h3-line-height                     : 1 !default;
 $h3-margin-bottom                   : $alpha-leading !default;
 
 $h4-font-family                     : $alpha-font-family !default;
-$h4-font-weight                     : $alpha-font-weight !default;
-$h4-font-size                       : $ms2 !default;
-$h4-line-height                     : 1.25 !default;
+$h4-font-weight                     : $beta-font-weight !default;
+$h4-font-size                       : $ms0 !default;
+$h4-line-height                     : 1 !default;
 $h4-margin-bottom                   : $alpha-leading !default;
 
 $h5-font-family                     : $alpha-font-family !default;
@@ -267,7 +267,7 @@ $h6-margin-bottom                   : $alpha-leading !default;
 
 $base-font-size                     : $alpha-font-size !default;
 $base-line-height                   : 1 !default;
-$base-margin-bottom                 : $beta-leading !default;
+$base-margin-bottom                 : $alpha-leading !default;
 $base-indent                        : 2 !default;
 
 $blockquote-font-style              : italic !default;

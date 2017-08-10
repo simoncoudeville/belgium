@@ -42,23 +42,30 @@
 }
 
 // Base colors
-$color-neutral                      : #aaa !default;
-
-$color-alpha                        : #0074D9 !default;
-$color-beta                         : #2ECC40 !default;
+$color-alpha                        : #00bc00 !default;
+$color-beta                         : #00c8ff !default;
+$color-gamma                        : #25408e !default;
 
 $color-error                        : #FF4136 !default;
 $color-success                      : #2ECC40 !default;
 $color-notice                       : #FF851B !default;
 
+$color-neutral                      : hsl(hue($color-alpha),0,50) !default;
+
 // Palettes
 $palettes: (
     color-neutral: (
-        x-light                     : hsl(hue($color-neutral),0,100),
-        light                       : hsl(hue($color-neutral),0,90),
+        xxxx-light                  : hsl(hue($color-neutral),saturation($color-neutral),100),
+        xxx-light                   : hsl(hue($color-neutral),saturation($color-neutral),90),
+        xx-light                    : hsl(hue($color-neutral),saturation($color-neutral),80),
+        x-light                     : hsl(hue($color-neutral),saturation($color-neutral),70),
+        light                       : hsl(hue($color-neutral),saturation($color-neutral),60),
         base                        : $color-neutral,
-        dark                        : hsl(hue($color-neutral),0,30),
-        x-dark                      : hsl(hue($color-neutral),0,10)
+        dark                        : hsl(hue($color-neutral),saturation($color-neutral),40),
+        x-dark                      : hsl(hue($color-neutral),saturation($color-neutral),30),
+        xx-dark                     : hsl(hue($color-neutral),saturation($color-neutral),20),
+        xxx-dark                    : hsl(hue($color-neutral),saturation($color-neutral),10),
+        xxxx-dark                   : hsl(hue($color-neutral),saturation($color-neutral),0)
     ),
     color-alpha: (
         light                       : hsl(hue($color-alpha),70,60),
@@ -160,9 +167,12 @@ $z-indexes: (
 $breakpoints: (
     bp1                             : 320/16*1em,
     bp2                             : 480/16*1em,
-    bp3                             : 680/16*1em,
+    bp3                             : 760/16*1em,
     bp4                             : 960/16*1em,
-    bp5                             : 1140/16*1em
+    bp5                             : 1140/16*1em,
+    bp6                             : 1440/16*1em,
+    bp7                             : 1681/16*1em,
+    bp8                             : 1920/16*1em
 ) !default;
 
 // ---
@@ -170,7 +180,7 @@ $breakpoints: (
 // ---
 
 // 1 times the $alpha-font-size. It's calculated in rem in _tools.spacing.scss
-$columns-gutter                     : $alpha-leading / 2 !default;
+$columns-gutter                     : $alpha-leading !default;
 
 // Define the amount of columns in the grid
 $columns: (
@@ -216,8 +226,8 @@ $html-responsive-font-size          : false !default;
 $html-responsive-font-breakpoint    : bp5 !default;
 $html-responsive-font-magnification : 112.5% !default;
 
-$html-background-color              : palette(color-neutral,dark) !default;
-$body-color                         : palette(color-neutral,dark) !default;
+$html-background-color              : palette(color-neutral,xxx-dark) !default;
+$body-color                         : palette(color-neutral,xxx-dark) !default;
 
 $body-font-smoothing                : true !default;
 
@@ -231,13 +241,13 @@ $body-selection-text-shadow         : none !default;
 
 $h1-font-family                     : $alpha-font-family !default;
 $h1-font-weight                     : $beta-font-weight !default;
-$h1-font-size                       : $ms5 !default;
-$h1-line-height                     : 1.25 !default;
-$h1-margin-bottom                   : $alpha-leading !default;
+$h1-font-size                       : $ms10 !default;
+$h1-line-height                     : 2 !default;
+$h1-margin-bottom                   : $alpha-leading * 1.25 !default;
 
 $h2-font-family                     : $alpha-font-family !default;
 $h2-font-weight                     : $beta-font-weight !default;
-$h2-font-size                       : $ms3 !default;
+$h2-font-size                       : $ms4 !default;
 $h2-line-height                     : 1 !default;
 $h2-margin-bottom                   : $alpha-leading !default;
 
@@ -344,7 +354,7 @@ $caption-padding-bottom             : $alpha-leading !default;
 // Grid
 // ---
 
-$grid-max-width                     : map-get($breakpoints,bp5) !default;
+$grid-max-width                     : map-get($breakpoints,bp7) !default;
 $grid-gutter                        : $columns-gutter !default;
 
 // ---

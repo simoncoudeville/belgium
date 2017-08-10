@@ -4,7 +4,7 @@
     Hacks and quick fixes
 */
 
-$show-baseline: true;
+$show-baseline: false;
 
 html {
     position: relative;
@@ -36,3 +36,251 @@ li {
         background-color: rgba(red,.1);
     }
 }
+
+.o-css-grid {
+    //@include margin-bottom($alpha-leading);
+
+    @include mq(bp3) {
+        display: grid;
+        //grid-gap: #{$columns-gutter / 2}px;
+        grid-auto-flow: dense;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        //grid-auto-rows: minmax(#{$alpha-leading * 5px}, 1fr);
+    }
+
+    @include mq(bp4) {
+        grid-template-columns: repeat(3, 1fr);
+        //grid-template-columns: repeat(auto-fill, minmax(#{$alpha-leading * 10px}, 1fr));
+        //grid-auto-rows: minmax(#{$alpha-leading * 10px}, 1fr);
+        //grid-auto-rows: minmax(#{$alpha-leading * 10px}, 1fr);
+    }
+
+    @include mq(bp5) {
+        //grid-template-columns: repeat(auto-fill, minmax(#{$alpha-leading * 12px}, 1fr));
+        //grid-auto-rows: minmax(#{$alpha-leading * 12px}, 1fr);
+        //grid-auto-rows: minmax(#{$alpha-leading * 14px}, 1fr);
+    }
+
+    @include mq(bp6) {
+        //grid-template-columns: repeat(auto-fill, minmax(#{$alpha-leading * 15px}, 1fr));
+        grid-template-columns: repeat(5, 1fr);
+        //grid-auto-rows: minmax(#{$alpha-leading * 14px}, 1fr);
+    }
+
+
+    @include mq(bp7) {
+        //grid-template-columns: repeat(auto-fill, minmax(#{$alpha-leading * 15px}, 1fr));
+        grid-template-columns: repeat(6, 1fr);
+        //grid-auto-rows: minmax(#{$alpha-leading * 14px}, 1fr);
+    }
+
+    //@include mq(bp4) {
+    //    //grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
+    //}
+    //
+    //@include mq(bp5) {
+    //    //grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    //    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    //}
+    //
+    //@include mq(bp6) {
+    //    //grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    //    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    //}
+}
+
+    .o-css-grid__item {
+        display: flex;
+    }
+
+    .o-css-grid__item--a {
+        //background-color: palette(color-neutral,x-light);
+        grid-column: span 2;
+        grid-row: span 2;
+
+        @include mq(bp6) {
+            grid-column: span 3;
+            grid-row: span 3;
+        }
+    }
+
+    .o-css-grid__item--b {
+        //background-color: palette(color-alpha);
+        grid-column: span 3;
+        grid-row: span 4;
+
+        @include mq(bp3) {
+            grid-column: span 2;
+            grid-row: span 4;
+        }
+
+        @include mq(bp7) {
+            grid-column: span 2;
+            grid-row: span 4;
+        }
+
+        //@include mq(bp7) {
+        //    grid-column: span 2;
+        //}
+    }
+
+    .o-css-grid__item--c {
+        //background-color: palette(color-beta);
+
+        grid-column: span 1;
+        grid-row: span 2;
+
+        @include mq(bp4) {
+            grid-column: span 1;
+            grid-row: span 2;
+        }
+
+        @include mq(bp7) {
+            grid-column: span 1;
+            grid-row: span 2;
+        }
+
+        //@include mq(bp6) {
+        //    grid-column: span 3;
+        //}
+    }
+
+    .o-css-grid__item--d {
+        //background-color: palette(color-neutral,xxx-light);
+
+        @include mq(bp3) {
+            grid-column: span 2;
+            grid-row: span 2;
+        }
+    }
+
+    .c-box {
+        position: relative;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        //overflow: hidden;
+        height: 0;
+        padding-bottom: 50%;
+        color: #fff;
+        //padding-bottom: #{$alpha-leading * 10}px;
+
+
+        .o-css-grid__item--c &,
+        .o-css-grid__item--b & {
+            padding-bottom: 100%;
+        }
+        //
+        //.o-css-grid__item--b & {
+        //    padding-bottom: calc(50% - #{$columns-gutter / 2}px);
+        //}
+        //
+        //.o-css-grid__item--c & {
+        //    padding-bottom: calc(50% - #{$columns-gutter}px);
+        //}
+        //
+        //.o-css-grid__item--d & {
+        //    padding-bottom: calc(50% - #{$columns-gutter}px);
+        //}
+
+        //.c-background-image {
+        //    display: none;
+        //}
+    }
+
+    .c-box--tweet {
+        color: palette(color-neutral,xxx-dark);
+        background-color: palette(color-beta);
+
+        a {
+            &,
+            &:visited {
+                color: palette(color-neutral,xxx-dark);
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .c-box__body {
+        //position: relative;
+        position: absolute;
+        //height: 100%;
+        left: 0;
+        bottom: 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        //flex-wrap: no-wrap;
+        @include padding-tb($alpha-leading);
+        @include padding-lr($columns-gutter);
+    }
+
+    .c-box__title {
+        color: palette(color-neutral,xxxx-light);
+        //text-shadow: 5px 5px 0 rgba(palette(color-neutral,xxxx-dark),.5);
+        //text-shadow: 1px 1px rgba(palette(color-neutral,xxxx-dark),.5),
+        //             2px 2px rgba(palette(color-neutral,xxxx-dark),.4),
+        //             3px 3px rgba(palette(color-neutral,xxxx-dark),.3),
+        //             4px 4px rgba(palette(color-neutral,xxxx-dark),.2),
+        //             5px 5px rgba(palette(color-neutral,xxxx-dark),.1);
+        max-width: 12em;
+        position: relative;
+        //display: inline;
+        text-decoration: underline;
+        text-decoration-color: palette(color-alpha);
+
+        .o-css-grid__item--a &,
+        .o-css-grid__item--b & {
+            @include ms8();
+        }
+
+        .o-css-grid__item--d & {
+            @include ms6();
+        }
+
+        .c-box:hover & {
+            text-decoration: underline;
+            text-decoration-color: palette(color-alpha);
+            //text-underline-position: below;
+            //background-image: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 2px, red 2px, red 3px, rgba(0, 0, 0, 0) 3px);
+        }
+    }
+
+    .c-background-image {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-position: 50% 50%;
+        background-size: cover;
+
+        &.c-background-image--overlay {
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                background-image: linear-gradient(to bottom,transparent 50%,rgba(palette(color-neutral,xxxx-dark),0.5) 100%);
+            }
+        }
+
+    }
+
+.c-stamp {
+    display: inline-block;
+    font-weight: $beta-font-weight;
+    text-transform: uppercase;
+    @include ms-1;
+    @include padding-lr($columns-gutter / 3);
+    //@include padding-tb($alpha-leading * .125, $alpha-leading * .125);
+}
+
+    .c-stamp--alpha {
+        color: #fff;
+        background-color: palette(color-alpha);
+    }

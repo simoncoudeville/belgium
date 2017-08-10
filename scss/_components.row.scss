@@ -9,11 +9,19 @@
     @include padding-lr($columns-gutter,$columns-gutter);
 }
 
+.c-row--empty {
+    padding: 0;
+
+    .o-container {
+        max-width: none;
+    }
+}
+
 .c-row--alpha {
-    background-color: palette(color-neutral,x-light);
+    background-color: palette(color-neutral,xxxx-light);
 }
 
 .c-row--beta {
     color: palette(color-neutral,light);
-    background-color: palette(color-neutral,dark);
+    background-color: palette(color-neutral,xxx-dark);
 }

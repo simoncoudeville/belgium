@@ -37,7 +37,7 @@
     box-shadow: none;
     font-weight: $beta-font-weight;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     -webkit-font-smoothing: antialiased; /* [4] */
     -moz-osx-font-smoothing: grayscale; /* [4] */
 
@@ -93,7 +93,7 @@
 
 .c-button--md {
     @include padding-lr($columns-gutter * 2,$columns-gutter * 2);
-    @include input-dimensions($ms1,1,0,$alpha-leading * .5,$alpha-leading * .5);
+    @include input-dimensions($ms0,1,0,$alpha-leading * .5,$alpha-leading * .5);
 }
 
 .c-button--lg {
@@ -109,7 +109,7 @@
 
     &,
     &:visited {
-        color: palette(color-neutral,x-light);
+        color: palette(color-neutral,xxxx-light);
     }
 
     &:hover,
@@ -130,13 +130,13 @@
 
     &,
     &:visited {
-        color: palette(color-neutral,x-light);
+        color: palette(color-neutral,xxxx-light);
     }
 
     &:hover,
     &:focus {
         background-color: palette(color-beta,light);
-        color: palette(color-neutral,x-light);
+        color: palette(color-neutral,xxxx-light);
     }
 
     &:active {
